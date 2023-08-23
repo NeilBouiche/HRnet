@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "alt_basic-modal": "^1.0.0",
     "dayjs": "^1.11.9",
     "install": "^0.13.0",
     "npm": "^9.8.1",
@@ -19,6 +20,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.7.4",
     "react-table": "^7.8.0",
+    "styled-components": "^6.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

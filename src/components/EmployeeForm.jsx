@@ -4,12 +4,12 @@ import { formattedSelectStates, departmentLsit } from "../utils/lists";
 import DataFormatter from "../utils/formatClass";
 import { DatePicker } from "@mui/x-date-pickers";
 import { TextField } from "@mui/material";
-// import Modal from "neilbouiche_basic_modal";
+import { Modal } from "alt_basic-modal";
 
 export default function EmployeeForm({ setShowTable, setFormData }) {
   const [dateOfBirth, setDateOfBirth] = useState(null);
   const [startDate, setStartDate] = useState(null);
-  //   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,12 +18,12 @@ export default function EmployeeForm({ setShowTable, setFormData }) {
     formattedData.dateOfBirth = dateOfBirth;
     formattedData.startDate = startDate;
     setFormData((prevFormData) => [...prevFormData, formattedData]);
-    // setIsModalOpen(true);
+    setIsModalOpen(true);
   };
 
-  //   const handleCloseModal = () => {
-  //     setIsModalOpen(false);
-  //   };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="container">
@@ -82,11 +82,11 @@ export default function EmployeeForm({ setShowTable, setFormData }) {
           <button type="submit">Save</button>
         </form>
       </div>
-      {/* <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <div id="confirmation" className="modal">
           Employee Created!
         </div>
-      </Modal> */}
+      </Modal>
     </div>
   );
 }
