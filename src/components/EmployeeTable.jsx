@@ -68,10 +68,10 @@ const EmployeeTable = ({ data, setShowTable }) => {
   );
 
   return (
-    <div className="tableContainer">
-      <h2 id="employeeListTitle">Current Employees</h2>
+    <div className="table-container">
+      <h2 id="employee-list-title">Current Employees</h2>
       {/* Global Filter */}
-      <div className="tableCenterElem">
+      <div className="table-center-elem">
         <input
           id="globalSearch"
           value={globalFilter || ""}
@@ -85,15 +85,21 @@ const EmployeeTable = ({ data, setShowTable }) => {
       >
         <thead>
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <tr
+              {...headerGroup.getHeaderGroupProps()}
+              style={{
+                borderBottom: "1px solid black",
+                background: "#334662",
+                height: "40px",
+                textAlign: "left",
+                color: "white",
+              }}
+            >
               {headerGroup.headers.map((column) => (
                 <th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   style={{
-                    borderBottom: "1px solid black",
-                    background: "#f2f2f2",
                     padding: "8px",
-                    textAlign: "left",
                   }}
                 >
                   {column.render("Header")}
@@ -121,7 +127,7 @@ const EmployeeTable = ({ data, setShowTable }) => {
               <tr
                 {...row.getRowProps()}
                 style={{
-                  background: rowIndex % 2 === 0 ? "#f9f9f9" : "white",
+                  background: rowIndex % 2 === 0 ? "transparent" : "#efefef",
                   borderBottom: "1px solid black",
                 }}
               >
@@ -147,42 +153,65 @@ const EmployeeTable = ({ data, setShowTable }) => {
         </tbody>
       </table>
       {/* Pagination */}
-      <div className="tableCenterElem">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+      <div className="table-center-elem">
+        <button
+          className="back-button"
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
           {"<<"}
         </button>
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <button
+          className="back-button"
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        >
           Précédent
         </button>
         <span>
           Page{" "}
           <strong>
-            {pageIndex + 1} sur {pageOptions.length}
-          </strong>{" "}
+            {pageIndex + 1} of {pageOptions.length}
+          </strong>
         </span>
 
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        <button
+          className="back-button"
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+        >
           Suivant
         </button>
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        <button
+          className="back-button"
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        >
           {">>"}
         </button>
       </div>
       {/* Page Size Selector */}
-      <div className="tableCenterElem">
+      <div className="table-center-elem table-footer">
         <select
+          className="pagination-select"
           value={pageSize}
           onChange={(e) => {
             setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Afficher {pageSize}
+          {[5, 10, 20, 40, 50].map((pageSize) => (
+            <option
+              className="pagination-option"
+              key={pageSize}
+              value={pageSize}
+            >
+              {pageSize}
             </option>
           ))}
         </select>
-        <button onClick={() => setShowTable(false)}>Close</button>
+        <button className="back-button" onClick={() => setShowTable(false)}>
+          Close
+        </button>
       </div>
     </div>
   );

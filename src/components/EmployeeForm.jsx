@@ -3,7 +3,6 @@ import Select from "react-select";
 import { formattedSelectStates, departmentLsit } from "../utils/lists";
 import DataFormatter from "../utils/formatClass";
 import { DatePicker } from "@mui/x-date-pickers";
-import { TextField } from "@mui/material";
 import { Modal } from "alt_basic-modal";
 
 export default function EmployeeForm({ setShowTable, setFormData }) {
@@ -28,59 +27,89 @@ export default function EmployeeForm({ setShowTable, setFormData }) {
   return (
     <div className="container">
       <div className="container">
-        <button onClick={() => setShowTable(true)}>
-          View current employee
+        <button className="front-button" onClick={() => setShowTable(true)}>
+          View current employees
         </button>
-        <h2>Create Employee</h2>
-        <form onSubmit={handleSubmit} id="create-employee">
-          <label htmlFor="first-name">First Name</label>
-          <input required type="text" id="first-name" name="firstName" />
-
-          <label htmlFor="last-name">Last Name</label>
-          <input required type="text" id="last-name" name="lastName" />
-
-          <label htmlFor="date-of-birth">Date of Birth</label>
-          <DatePicker
-            required
-            id="dateOfBirth"
-            value={dateOfBirth}
-            onChange={(newValue) => {
-              setDateOfBirth(newValue);
-            }}
-            renderInput={(params) => <TextField {...params} />}
-          />
-
-          <label htmlFor="start-date">Start Date</label>
-          <DatePicker
-            required
-            id="startDate"
-            value={startDate}
-            onChange={(newValue) => {
-              setStartDate(newValue);
-            }}
-            renderInput={(params) => <TextField {...params} />}
-          />
-
-          <fieldset className="address">
-            <legend>Address</legend>
+        <div className="box">
+          <form onSubmit={handleSubmit} id="create-employee">
+            <h2>Create Employee</h2>
+            <label htmlFor="first-name">First Name</label>
+            <input required type="text" id="first-name" name="firstName" />
+            <label htmlFor="last-name">Last Name</label>
+            <input required type="text" id="last-name" name="lastName" />
+            <label htmlFor="date-of-birth">Date of Birth</label>
+            <DatePicker
+              required
+              id="dateOfBirth"
+              value={dateOfBirth}
+              onChange={(newValue) => {
+                setDateOfBirth(newValue);
+              }}
+              slotProps={{
+                textField: { variant: "outlined", placeholder: "" },
+              }}
+            />
+            <label htmlFor="start-date">Start Date</label>
+            <DatePicker
+              required
+              id="startDate"
+              value={startDate}
+              onChange={(newValue) => {
+                setStartDate(newValue);
+              }}
+              slotProps={{
+                textField: { variant: "outlined", placeholder: "" },
+              }}
+            />
             <label htmlFor="street">Street</label>
-            <input required id="street" name="street" type="text" />
+            <input
+              required
+              id="street"
+              name="street"
+              type="text"
+              autoComplete="off"
+            />
 
             <label htmlFor="city">City</label>
-            <input required id="city" name="city" type="text" />
+            <input
+              required
+              id="city"
+              name="city"
+              type="text"
+              autoComplete="off"
+            />
 
             <label htmlFor="state">State</label>
-            <Select required options={formattedSelectStates} name="state" />
-
+            <Select
+              required
+              options={formattedSelectStates}
+              name="state"
+              placeholder
+              className="react-select-container"
+              classNamePrefix="react-select"
+            />
             <label htmlFor="zipCode">Zip Code</label>
-            <input required id="zipCode" name="zipCode" type="number" />
-          </fieldset>
-
-          <label htmlFor="department">Department</label>
-          <Select options={departmentLsit} name="department" />
-
-          <button type="submit">Save</button>
-        </form>
+            <input
+              required
+              id="zipCode"
+              name="zipCode"
+              type="number"
+              min={0}
+              autoComplete="off"
+            />
+            <label htmlFor="department">Department</label>
+            <Select
+              options={departmentLsit}
+              name="department"
+              placeholder
+              className="react-select-container"
+              classNamePrefix="react-select"
+            />
+            <button id="submit" className="front-button" type="submit">
+              Save
+            </button>
+          </form>
+        </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <div id="confirmation" className="modal">

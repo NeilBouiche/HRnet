@@ -12,11 +12,11 @@ function App() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="App">
         <div className="title">
-          <h1>HRnet</h1>
+          <h1 className="box">HRnet</h1>
         </div>
         <EmployeeForm setShowTable={setShowTable} setFormData={setFormData} />
         {showTable && (
-          <div className="tableDisplay">
+          <div className="table-display">
             <EmployeeTable data={formData} setShowTable={setShowTable} />
           </div>
         )}
