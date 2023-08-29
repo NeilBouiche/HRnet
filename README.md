@@ -15,12 +15,19 @@ Here you will find this newer version, you will also find below the references t
 ## Developed with:
 
 [React](https://react.dev/): Facebook open-source Javascript library.
+
 [create-react-app](https://create-react-app.dev/): Create React App (CRA) is a tool to create single-page React applications that is officially supported by the React team.
+
 [Github](https://github.com): Version control tool.
+
 [MUI-Date-Picker](https://mui.com/x/react-date-pickers/getting-started/): Material UI Date Picker Library.
+
 [React-Select](https://react-select.com/home): React Select Input Library.
+
 [TanStack-Table](https://tanstack.com/table/v8): Headless React Table Library.
+
 [alt_basic-modal](https://www.npmjs.com/package/alt_basic-modal): Basic React Modal Component used to reduce boilerplate code.
+
 
 ## How to Install:
 
