@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+[![Built with React](https://img.shields.io/badge/Built_with-React-blue.svg)](https://reactjs.org/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HRnet : HR internal tool
 
-## Available Scripts
+HRnet is WealthHealth internal HR tool used to mangae employee files. It used to use the aging library JQuery and is replaced with a more modern approch with React and it's ecosystem.
 
-In the project directory, you can run:
+Here you will find this newer version, you will also find below the references to all libraries and dependcies used to build it.
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- JS
+- CSS
+- React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Developed with:
 
-### `npm test`
+[React](https://react.dev/): Facebook open-source Javascript library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[create-react-app](https://create-react-app.dev/): Create React App (CRA) is a tool to create single-page React applications that is officially supported by the React team.
 
-### `npm run build`
+[Github](https://github.com): Version control tool.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[MUI-Date-Picker](https://mui.com/x/react-date-pickers/getting-started/): Material UI Date Picker Library.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[React-Select](https://react-select.com/home): React Select Input Library.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[TanStack-Table](https://tanstack.com/table/v8): Headless React Table Library.
 
-### `npm run eject`
+[alt_basic-modal](https://www.npmjs.com/package/alt_basic-modal): Basic React Modal Component used to reduce boilerplate code.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Install:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone this repo:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Use the command `git clone https://github.com/user/repo.git` to clone the repository.
 
-## Learn More
+Install all dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Use the command `npm install` or `yarn install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open the project:
 
-### Code Splitting
+- Use the command `npm start` or `yarn start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contribute to the project
 
-### Analyzing the Bundle Size
+HRnet is an open source project. Feel free to fork the source and contribute with your own features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
+Our code team : Neil Bouiche
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Licensing
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was built under the Creative Commons licence.
