@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { formattedSelectStates, departmentLsit } from "../utils/lists";
+import { formattedSelectStates, departmentList } from "../utils/lists";
 import DataFormatter from "../utils/formatClass";
 import { DatePicker } from "@mui/x-date-pickers";
 import { Modal } from "alt_basic-modal";
 
 export default function EmployeeForm({ setShowTable, setFormData }) {
+  // Date state used fot both displaying the date in the picker and to save it to be used in the table
   const [dateOfBirth, setDateOfBirth] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // Create a new object with the user form data
     const data = new FormData(event.target);
+    // Pass the data into the formatting class
     const formattedData = DataFormatter.formatFormData(data);
+    // Making sure the dates are added correctly
     formattedData.dateOfBirth = dateOfBirth;
     formattedData.startDate = startDate;
+    // setting the state of the parent component which will be used in the table
     setFormData((prevFormData) => [...prevFormData, formattedData]);
+    // Opening cnfirmation modal
     setIsModalOpen(true);
   };
 
@@ -99,7 +105,7 @@ export default function EmployeeForm({ setShowTable, setFormData }) {
             />
             <label htmlFor="department">Department</label>
             <Select
-              options={departmentLsit}
+              options={departmentList}
               name="department"
               placeholder
               className="react-select-container"

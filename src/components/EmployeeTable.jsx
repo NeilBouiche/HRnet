@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
 
 const EmployeeTable = ({ data, setShowTable }) => {
-  console.log(data);
+  // columns definition
   const columns = React.useMemo(
     () => [
       { Header: "First Name", accessor: "firstName", sortType: "basic" },
@@ -37,6 +37,7 @@ const EmployeeTable = ({ data, setShowTable }) => {
     return dateA.getTime() - dateB.getTime();
   };
 
+  // The useTable hook returns an object with various properties and functions that are necessary to set up and manage the behavior of the table.
   const {
     getTableProps,
     getTableBodyProps,
@@ -68,6 +69,7 @@ const EmployeeTable = ({ data, setShowTable }) => {
   );
 
   return (
+    // Table HTML
     <div className="table-container">
       <h2 id="employee-list-title">Current Employees</h2>
       {/* Global Filter */}
@@ -83,6 +85,7 @@ const EmployeeTable = ({ data, setShowTable }) => {
         {...getTableProps()}
         style={{ width: "100%", borderCollapse: "collapse" }}
       >
+        {/* thead is loaded from headerGroups */}
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr
@@ -120,6 +123,7 @@ const EmployeeTable = ({ data, setShowTable }) => {
             </tr>
           ))}
         </thead>
+        {/* table body begins */}
         <tbody {...getTableBodyProps()}>
           {page.map((row, rowIndex) => {
             prepareRow(row);

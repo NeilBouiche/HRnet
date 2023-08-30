@@ -1,5 +1,6 @@
 import DataFormatter from "./formatClass";
 
+// Array containing the data for all states
 const states = [
   {
     name: "Alabama",
@@ -239,7 +240,8 @@ const states = [
   },
 ];
 
-export const departmentLsit = [
+// Array containing data for all departments
+export const departmentList = [
   { value: "Sales", label: "Sales" },
   { value: "Marketing", label: "Marketing" },
   { value: "Human Resources", label: "Human Resources" },
