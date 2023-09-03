@@ -11,7 +11,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "alt_basic-modal": "^1.0.2",
+    "alt_basic-modal": "^1.0.29",
     "dayjs": "^1.11.9",
     "install": "^0.13.0",
     "npm": "^9.8.1",
